@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        # 配置中心地址
+        server-addr: 9.135.95.39:8848
+        name: springcloud-config
+        file-extension: yaml
