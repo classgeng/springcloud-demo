@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: ratelimiter-demo
+    cloud:
+      gateway:
+        routes:
+          - id: user_service
+            uri: lb://user-service
+            predicates:
+              - Path=/api/v1/users/**
+            filters:
+              - name: RequestRateLimiter
+                args:
+                  redis-rate-limiter.replenishRate: 10  # 每秒允许处理的请求数
+                  redis-rate-limiter.burstCapacity: 20  # 令牌桶的容量
+# 日志配置
+logging:
+  level:
+    com.demo: debug
+    org.springframework: info

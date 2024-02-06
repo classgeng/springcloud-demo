@@ -8,6 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/springcloud-gateway/springcloud-gateway.iml" filepath="$PROJECT_DIR$/springcloud-gateway/springcloud-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-provider1/springcloud-provider1.iml" filepath="$PROJECT_DIR$/springcloud-provider1/springcloud-provider1.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-provider2/springcloud-provider2.iml" filepath="$PROJECT_DIR$/springcloud-provider2/springcloud-provider2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-ratelimiter/springcloud-ratelimiter.iml" filepath="$PROJECT_DIR$/springcloud-ratelimiter/springcloud-ratelimiter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-sentinel/springcloud-sentinel.iml" filepath="$PROJECT_DIR$/springcloud-sentinel/springcloud-sentinel.iml" />
     </modules>
   </component>
 </project>

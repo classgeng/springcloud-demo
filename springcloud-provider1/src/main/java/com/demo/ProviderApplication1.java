@@ -21,6 +21,7 @@ public class ProviderApplication1 extends SpringBootServletInitializer {
     }
 
     public static void main(String[] args){
+
         SpringApplication.run(ProviderApplication1.class, args);
     }
 }

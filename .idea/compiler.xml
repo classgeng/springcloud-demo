@@ -8,10 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="springcloud-provider2" />
-        <module name="springcloud-config" />
+        <module name="springcloud-sentinel" />
         <module name="springcloud-gateway" />
         <module name="springcloud-consumer" />
+        <module name="springcloud-ratelimiter" />
         <module name="springcloud-provider1" />
+        <module name="springcloud-config" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +23,8 @@
       <module name="springcloud-gateway" target="1.8" />
       <module name="springcloud-provider1" target="1.8" />
       <module name="springcloud-provider2" target="1.8" />
+      <module name="springcloud-ratelimiter" target="1.8" />
+      <module name="springcloud-sentinel" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

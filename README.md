@@ -1,9 +1,8 @@
 ## 平台简介
 
-    msdm-portal         -> 门户网站
-    msdm-controller     -> 控制层代码
-    msdm-service        -> 业务层代码
-    msdm-dao            -> 数据访问层代码     
-    msdm-core           -> 核心代码
-    msdm-common         -> 公共代码
-    msdm-test           -> 测试代码
+    springcloud-config          -> 配置中心
+    springcloud-gateway         -> 网关
+    
+    springcloud-consumer        -> 服务消费方
+    springcloud-provider1       -> 服务提供方1     
+    springcloud-provider2       -> 服务提供方2

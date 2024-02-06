@@ -2,14 +2,29 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="thirdparty" />
+      <option name="name" value="thirdparty" />
+      <option name="url" value="https://mirrors.tencent.com/repository/maven/thirdparty/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="https://repo.maven.apache.org/maven2" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="public" />
-      <option name="name" value="aliyun nexus" />
-      <option name="url" value="http://maven.aliyun.com/nexus/content/groups/public/" />
+      <option name="id" value="build-task-tool" />
+      <option name="name" value="build-task-tool" />
+      <option name="url" value="https://mirrors.tencent.com/repository/maven/build-task-tool" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="qcloud-releases" />
+      <option name="name" value="qcloud-releases" />
+      <option name="url" value="http://nexus.qcloud.oa.com/repository/maven-releases/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="tencent_public" />
+      <option name="name" value="tencent_public" />
+      <option name="url" value="https://mirrors.tencent.com/repository/maven/tencent_public" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />
@@ -17,9 +32,54 @@
       <option name="url" value="https://repo1.maven.org/maven2" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="tcesdk" />
+      <option name="name" value="tcesdk" />
+      <option name="url" value="https://mirrors.tencent.com/repository/maven/tcesdk" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="csig-prod-mid-dev02" />
+      <option name="name" value="csig-prod-mid-dev02" />
+      <option name="url" value="https://mirrors.tencent.com/repository/maven/csig-prod-mid-dev02/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="tcecloud-sdk" />
+      <option name="name" value="tcecloud-sdk-java" />
+      <option name="url" value="https://mirrors.tencent.com/repository/maven/tcecloud-sdk" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven-public" />
+      <option name="name" value="maven-public" />
+      <option name="url" value="https://mirrors.tencent.com/nexus/repository/maven-public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="tsf-snapshot" />
+      <option name="name" value="tsf-snapshot" />
+      <option name="url" value="https://mirrors.tencent.com/repository/maven/tsf-snapshot/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="csig-prod-mid-dev02-snapshot" />
+      <option name="name" value="csig-prod-mid-dev02-snapshot" />
+      <option name="url" value="https://mirrors.tencent.com/repository/maven/csig-prod-mid-dev02-snapshot/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="public" />
+      <option name="name" value="aliyun nexus" />
+      <option name="url" value="http://maven.aliyun.com/nexus/content/groups/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="qcloud-snapshots" />
+      <option name="name" value="qcloud-snapshots" />
+      <option name="url" value="http://nexus.qcloud.oa.com/repository/maven-snapshots/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="tsf" />
+      <option name="name" value="tsf" />
+      <option name="url" value="https://mirrors.tencent.com/repository/maven/tsf/" />
     </remote-repository>
   </component>
 </project>

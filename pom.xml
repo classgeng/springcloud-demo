@@ -4,12 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<properties>
+		<!-- 公共配置 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<springcloud.demo.version>1.0.0</springcloud.demo.version>
-		<springboot.version>2.1.6.RELEASE</springboot.version>
-		<springcloud.version>Greenwich.SR3</springcloud.version>
-		<springcloud.alibaba.version>0.9.0.RELEASE</springcloud.alibaba.version>
+		<springboot.version>2.3.2.RELEASE</springboot.version>
+		<springcloud.version>Hoxton.SR9</springcloud.version>
+		<springcloud.alibaba.version>2.2.6.RELEASE</springcloud.alibaba.version>
 	</properties>
 
 	<modelVersion>4.0.0</modelVersion>
@@ -23,10 +24,13 @@
 	
 	<modules>
 		<module>springcloud-config</module>
+		<module>springcloud-gateway</module>
+		<module>springcloud-ratelimiter</module>
+		<module>springcloud-sentinel</module>
+
 		<module>springcloud-provider1</module>
 		<module>springcloud-provider2</module>
         <module>springcloud-consumer</module>
-		<module>springcloud-gateway</module>
 	</modules>
 
     <!-- 依赖声明 -->
@@ -50,7 +54,7 @@
 			</dependency>
 			<!-- spring-cloud-alibaba的依赖配置-->
 			<dependency>
-				<groupId>org.springframework.cloud</groupId>
+				<groupId>com.alibaba.cloud</groupId>
 				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
 				<version>${springcloud.alibaba.version}</version>
 				<type>pom</type>
@@ -75,6 +79,12 @@
 			<dependency>
 				<groupId>com.demo</groupId>
 				<artifactId>springcloud-config</artifactId>
+				<version>${springcloud.demo.version}</version>
+			</dependency>
+			<!-- Sentinel限流 -->
+			<dependency>
+				<groupId>com.demo</groupId>
+				<artifactId>springcloud-sentinel</artifactId>
 				<version>${springcloud.demo.version}</version>
 			</dependency>
         </dependencies>

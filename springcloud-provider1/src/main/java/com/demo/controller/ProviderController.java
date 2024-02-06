@@ -25,7 +25,7 @@ public class ProviderController {
      */
     @GetMapping(path="/sayHello")
     public String sayHello(String name) {
-        return "nacos-service-provider-1：hello," + name + " [appId：" + appConfig.getAppId() + ",appName:" + appConfig.getAppName() + "]";
+        return "provider-demo1：hello," + name + " [appId：" + appConfig.getAppId() + ",appName:" + appConfig.getAppName() + "]";
     }
 
     /**
