@@ -17,6 +17,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="springcloud-common" target="1.8" />
       <module name="springcloud-config" target="1.8" />
       <module name="springcloud-consumer" target="1.8" />
       <module name="springcloud-demo" target="1.8" />

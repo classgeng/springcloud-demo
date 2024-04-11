@@ -23,6 +23,7 @@
 	<packaging>pom</packaging>
 	
 	<modules>
+		<module>springcloud-common</module>
 		<module>springcloud-config</module>
 		<module>springcloud-gateway</module>
 		<module>springcloud-ratelimiter</module>
