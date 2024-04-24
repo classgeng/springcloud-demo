@@ -76,6 +76,12 @@
 				<groupId>org.slf4j</groupId>
 				<artifactId>jcl-over-slf4j</artifactId>
 			</dependency>
+			<!-- 公共模块 -->
+			<dependency>
+				<groupId>com.demo</groupId>
+				<artifactId>springcloud-common</artifactId>
+				<version>${springcloud.demo.version}</version>
+			</dependency>
 			<!-- 配置中心 -->
 			<dependency>
 				<groupId>com.demo</groupId>

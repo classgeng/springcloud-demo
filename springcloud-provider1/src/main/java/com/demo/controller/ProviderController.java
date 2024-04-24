@@ -1,11 +1,13 @@
 package com.demo.controller;
 
+import com.demo.common.I18N.I18NUtils;
 import com.demo.config.AppConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.RequestEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Locale;
 
 /**
  * @author xfgeng
@@ -37,5 +39,14 @@ public class ProviderController {
         return "no，" + name;
     }
 
+
+    @RequestMapping(value = "/echo/{str}", method = RequestMethod.POST)
+    public String i18nEcho(@RequestBody RequestEntity requestEntity, @PathVariable String str) {
+        String language = requestEntity.getHeaders().getFirst("Language");
+        String contentLanguage = requestEntity.getHeaders().getContentLanguage().getLanguage();
+
+        Object[] args = {str,language,contentLanguage};
+        return I18NUtils.msg("tsf.gateway.create", args, language);
+    }
 
 }
