@@ -1,6 +1,6 @@
 server:
   # 服务器的HTTP端口
-  port: 8082
+  port: 8083
 spring:
   application:
     name: provider-demo

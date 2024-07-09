@@ -94,6 +94,22 @@
 				<artifactId>springcloud-sentinel</artifactId>
 				<version>${springcloud.demo.version}</version>
 			</dependency>
+
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>31.0.1-jre</version>
+			</dependency>
+			<dependency>
+				<groupId>org.redisson</groupId>
+				<artifactId>redisson</artifactId>
+				<version>3.16.4</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.hutool</groupId>
+				<artifactId>hutool-all</artifactId>
+				<version>5.7.13</version>
+			</dependency>
         </dependencies>
     </dependencyManagement>
 

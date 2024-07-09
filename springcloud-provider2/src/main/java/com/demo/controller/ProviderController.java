@@ -25,6 +25,7 @@ public class ProviderController {
      */
     @GetMapping(path="/sayHello")
     public String sayHello(String name) {
+        log.info("provider-demo2: {} {} {}", appConfig.getAppId(), appConfig.getAppName(), name);
         return "provider-demo2：hello," + name + " [appId：" + appConfig.getAppId() + ",appName:" + appConfig.getAppName() + "]";
     }
 

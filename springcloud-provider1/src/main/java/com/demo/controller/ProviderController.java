@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.RequestEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Locale;
-
 /**
  * @author xfgeng
  * @date 2020-11-16 15:16
@@ -27,6 +25,7 @@ public class ProviderController {
      */
     @GetMapping(path="/sayHello")
     public String sayHello(String name) {
+        log.info("provider-demo1: {} {} {}", appConfig.getAppId(), appConfig.getAppName(), name);
         return "provider-demo1：hello," + name + " [appId：" + appConfig.getAppId() + ",appName:" + appConfig.getAppName() + "]";
     }
 

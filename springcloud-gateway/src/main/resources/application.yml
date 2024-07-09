@@ -1,6 +1,6 @@
 server:
   # 服务器的HTTP端口
-  port: 8089
+  port: 8080
 spring:
   application:
     name: gateway-demo
@@ -14,7 +14,16 @@ spring:
       - id: provider-demo
         uri: lb://provider-demo
         predicates:
-        - Path=/api/**
+        - Path=/api/provider/**
+        filters:
+          - name: Hystrix
+            args:
+              name: fallbackcmd
+              fallbackUri: forward:/hystrix/fallback
+      - id: consumer-demo
+        uri: lb://consumer-demo
+        predicates:
+          - Path=/api/consumer/**
         filters:
           - name: Hystrix
             args:
