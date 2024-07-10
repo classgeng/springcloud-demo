@@ -1,3 +1,6 @@
+server:
+  # 服务器的HTTP端口
+  port: 8083
 spring:
   application:
     name: ratelimiter-demo
@@ -13,6 +16,14 @@ spring:
                 args:
                   redis-rate-limiter.replenishRate: 10  # 每秒允许处理的请求数
                   redis-rate-limiter.burstCapacity: 20  # 令牌桶的容量
+  redis:
+    host: 9.135.95.39
+    port: 7379
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
 # 日志配置
 logging:
   level:
