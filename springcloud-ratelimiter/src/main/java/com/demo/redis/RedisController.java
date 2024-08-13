@@ -1,5 +1,6 @@
 package com.demo.redis;
 
+import com.demo.config.AppConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class RedisController {
 
     @Autowired
-    private RedisTemplate<String, Object> redisTemplate;
+    private AppConfig appConfig;
 
     /**
      * 测试服务

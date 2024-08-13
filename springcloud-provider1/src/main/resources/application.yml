@@ -9,6 +9,19 @@ spring:
       discovery:
         # 注册中心地址
         server-addr: 127.0.0.1:8848
+#Prometheus springboot监控配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    tags:
+      application: ${spring.application.name} # 暴露的数据中添加application label
+
 # 日志配置
 logging:
   level:

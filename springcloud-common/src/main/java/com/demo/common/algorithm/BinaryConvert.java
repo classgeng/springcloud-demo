@@ -1,9 +1,80 @@
 package com.demo.common.algorithm;
 
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
 /**
  * 进制转换
  */
 public class BinaryConvert {
+
+    public static void main(String[] args) {
+       /* System.out.println(stringToAsc16("12345678"));
+
+        binaryConvert();
+        hexToBinary();*/
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("请输入一个16进制数字（例如：0xAF或#AF）: ");
+        /*String hexStr = scanner.nextLine();
+        int hexNumber = Integer.parseInt(hexStr,16);*/
+
+        while(scanner.hasNext()){
+            int hexNumber = scanner.nextInt(16);
+            System.out.println("你输入的10进制数字是: " + hexNumber);
+        }
+        scanner.close();
+    }
+
+
+    public static void strToHex(int hex){
+        System.out.println(Integer.parseInt(String.valueOf(hex)));
+    }
+
+    public static void hexToTen(String hex){
+        System.out.println(Integer.parseInt(hex));
+    }
+
+
+    /**
+     * 进制转换
+     */
+    public static void binaryConvert(){
+        int ten = 78;
+        System.out.println("十进制转二进制：" + Integer.toBinaryString(ten));
+        System.out.println("十进制转八进制：" + Integer.toOctalString(ten));
+        System.out.println("十进制转十六进制：" + Integer.toHexString(ten));
+
+        int binary = 0b11101;
+        System.out.println("二进制转十进制：" + Integer.parseInt(String.valueOf(binary)));
+        int octal = 035;
+        System.out.println("八进制转十进制：" + Integer.parseInt(String.valueOf(octal)));
+        int hex = 0x1d;
+        System.out.println("十六进制转十进制：" + Integer.parseInt(String.valueOf(hex)));
+    }
+
+
+    /**
+     * 十六进制转成二进制
+     * 1、先将十六进制转出十进制
+     * 2、再将十进制转出二进制
+     */
+    public static void hexToBinary(){
+        int hex = 0xbd;
+        int ten = Integer.parseInt(String.valueOf(hex));
+        System.out.println("先将十六进制转出十进制:"+ten);
+        System.out.println("再将十进制转出二进制:"+ Integer.toBinaryString(ten));
+    }
+
+
+    /**
+     * 二进制转十进制
+     *
+     * @return
+     */
+    public static int twoToTen(int binary){
+        return Integer.parseInt(String.valueOf(binary));
+    }
 
 
     /**
@@ -27,8 +98,6 @@ public class BinaryConvert {
         return sb.toString();
     }
 
-    public static void main(String[] args) {
-        System.out.println(stringToAsc16("12345678"));
-    }
+
 
 }

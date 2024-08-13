@@ -12,7 +12,7 @@ public class ArrayOrder {
     public static void main(String[] args) {
         int[] arr = {10, 7, 8, 9, 1, 5, 2, 4, 6, 3,5};
 
-        dubbleOrder(arr);
+        secletOrder(arr);
         System.out.println("selection sort: " + Arrays.toString(arr));
 
         int[] newArr = quchong2(arr);

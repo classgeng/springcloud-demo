@@ -5,7 +5,10 @@ import com.demo.config.AppConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.RequestEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+
+import java.beans.Transient;
 
 /**
  * @author xfgeng
@@ -34,6 +37,7 @@ public class ProviderController {
      * @return
      */
     @GetMapping(path="/sayNo")
+    @Transactional
     public String sayNo(String name) {
         return "no，" + name;
     }

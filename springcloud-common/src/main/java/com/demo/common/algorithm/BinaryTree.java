@@ -1,8 +1,8 @@
 package com.demo.common.algorithm;
 
+import java.sql.SQLOutput;
+import java.util.*;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
 
 /**
  * 二叉树
@@ -29,7 +29,7 @@ public class BinaryTree {
     }
 
     /**
-     * 二叉树最小深度-深度（高度）优先
+     * 二叉树最小深度-深度（高度）优先 dfs
      * 递归，找到深度最小的节点返回
      * @param treeNode
      * @return
@@ -41,6 +41,7 @@ public class BinaryTree {
         if (null == treeNode.leftNode && null == treeNode.rightNode) {
             return 1;
         }
+
         int leftMin = Integer.MAX_VALUE;
         int rightMin = Integer.MAX_VALUE;
         if(null != treeNode.leftNode){
@@ -60,7 +61,7 @@ public class BinaryTree {
     }
 
     /**
-     * 二叉树最小深度-广度（宽度）优先
+     * 二叉树最小深度-广度（宽度）优先 bfs
      * 采用队列（queue），先进先出，直到找到第一个叶子节点返回深度
      * 否则一直循环找左节点、右节点，deep+1，并加入队列
      * @param treeNode
@@ -75,6 +76,7 @@ public class BinaryTree {
         queue.offer(treeNode);
         while(!queue.isEmpty()){
             TreeNode currNode = queue.poll();
+            System.out.println(currNode.value);
             if(null == currNode.leftNode && null == currNode.rightNode){
                 return currNode.deep; // 已经找到最浅的节点，返回当前节点深度即可
             }
@@ -147,10 +149,10 @@ public class BinaryTree {
             }
         }
         list.set(index,root.value);
-        // 前序遍历1234567
         levelOrder(root.leftNode,2*index,list);
         levelOrder(root.rightNode,2*index+1,list);
     }
+
 
     /**
      * 二叉树遍历-迭代
@@ -174,6 +176,50 @@ public class BinaryTree {
             }
         }
     }
+    public static int minDfsDepth(TreeNode treeNode) {
+        if(null == treeNode){
+            return 0;
+        }
+        if(null==treeNode.leftNode && null==treeNode.rightNode){
+            return 1;
+        }
+        int leftMin = Integer.MAX_VALUE;
+        int rightMin = Integer.MAX_VALUE;
+        if(null != treeNode.leftNode){
+            leftMin = minDfsDepth(treeNode.leftNode);
+        }
+        if(null != treeNode.rightNode){
+            rightMin = minDfsDepth(treeNode.rightNode);
+        }
+        int min = Math.min(leftMin,rightMin);
+        //int max = Math.max(leftMin,rightMin);
+        System.out.println(min);
+        return min+1;
+    }
+
+    public static int minBfsDepth(TreeNode treeNode) {
+        if(null == treeNode){
+            return 0;
+        }
+        treeNode.deep = 1;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(treeNode);
+        while(!queue.isEmpty()){
+            TreeNode currNode = queue.poll();
+            if(null==currNode.leftNode && null==currNode.rightNode){
+                return currNode.deep;
+            }
+            if(null != currNode.leftNode){
+                currNode.leftNode.deep = currNode.deep+1;
+                queue.offer(currNode.leftNode);
+            }
+            if(null != currNode.rightNode){
+                currNode.rightNode.deep = currNode.deep+1;;
+                queue.offer(currNode.rightNode);
+            }
+        }
+        return 0;
+    }
 
 
     public static void main(String[] args) {
@@ -185,34 +231,17 @@ public class BinaryTree {
         TreeNode node2 = new TreeNode(2, node4, node5);
         TreeNode node1 = new TreeNode(1, node2, node3);
 
-        levelOrder(node1);
+        //levelOrder(node1);
 
-        /*List<Integer> list = new ArrayList<>();
+       /* List<Integer> list = new ArrayList<>();
         levelOrder(node1,1,list);
         list.removeIf(item -> item == null);
         System.out.println(Arrays.toString(list.toArray()));*/
 
         //TreeNode fullTrue = buildFullTree(3, 1);
-        //System.out.println(minDepth(node1));
         //System.out.println(minDepth1(node1));
-
-        // 生成4个4层的满二叉树
-        /*TreeNode tree1 = buildFullTree(4,1);
-        TreeNode tree2 = buildFullTree(4,1);
-        TreeNode tree3 = buildFullTree(4,1);
-        TreeNode tree4 = buildFullTree(4,1);
-        // 把4棵树根节点串起来
-        TreeNode[] treeList = {tree1, tree2, tree3, tree4};
-        for (int i =0; i<treeList.length; i++){
-            System.out.println("第"+i+"棵满二叉树开始遍历：");
-            TreeNode tree = treeList[i];
-            // TODO 如何遍历二叉树
-            System.out.println(tree.value);
-            System.out.println("第"+i+"棵满二叉树遍历结束");
-            System.out.println(" ");
-        }*/
-
-
+        System.out.println(minBfsDepth(node1));
+        //System.out.println(minDfsDepth(node1));
 
 
     }
