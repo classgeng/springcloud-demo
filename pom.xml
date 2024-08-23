@@ -23,11 +23,13 @@
 	<packaging>pom</packaging>
 	
 	<modules>
+		<module>springcloud-core</module>
 		<module>springcloud-common</module>
 		<module>springcloud-config</module>
 		<module>springcloud-gateway</module>
 		<module>springcloud-ratelimiter</module>
 		<module>springcloud-sentinel</module>
+		<module>springcloud-metrics</module>
 
 		<module>springcloud-provider1</module>
 		<module>springcloud-provider2</module>
@@ -76,6 +78,12 @@
 				<groupId>org.slf4j</groupId>
 				<artifactId>jcl-over-slf4j</artifactId>
 			</dependency>
+			<!-- 核心模块 -->
+			<dependency>
+				<groupId>com.demo</groupId>
+				<artifactId>springcloud-core</artifactId>
+				<version>${springcloud.demo.version}</version>
+			</dependency>
 			<!-- 公共模块 -->
 			<dependency>
 				<groupId>com.demo</groupId>
@@ -116,6 +124,18 @@
 				<groupId>com.google.guava</groupId>
 				<artifactId>guava</artifactId>
 				<version>31.0.1-jre</version>
+			</dependency>
+
+			<!--集成redis-->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-redis</artifactId>
+				<version>2.3.0.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>3.8.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.redisson</groupId>

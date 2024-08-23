@@ -13,6 +13,8 @@
         <module name="springcloud-consumer" />
         <module name="springcloud-ratelimiter" />
         <module name="springcloud-provider1" />
+        <module name="springcloud-metrics" />
+        <module name="springcloud-core" />
         <module name="springcloud-common" />
         <module name="springcloud-config" />
       </profile>

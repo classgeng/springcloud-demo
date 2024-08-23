@@ -9,14 +9,14 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>springcloud-common</artifactId>
+    <artifactId>springcloud-core</artifactId>
     <packaging>jar</packaging>
-    <description>公共模块</description>
+    <description>核心模块</description>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.data</groupId>
