@@ -27,6 +27,11 @@
       <option name="url" value="http://nexus.qcloud.oa.com/repository/maven-releases/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="http://maven.aliyun.com/nexus/content/repositories/central/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="tcesdk" />
       <option name="name" value="tcesdk" />
       <option name="url" value="https://mirrors.tencent.com/repository/maven/tcesdk" />

@@ -1,6 +1,7 @@
 package com.demo.controller;
 
 import com.demo.common.I18N.I18NUtils;
+import com.demo.common.http.OkHttpClientHandler;
 import com.demo.config.AppConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,16 @@ public class ProviderController {
     @Transactional
     public String sayNo(String name) {
         return "no，" + name;
+    }
+
+    /**
+     * 测试服务
+     * @return
+     */
+    @GetMapping(path="/http")
+    @Transactional
+    public String http(String url) {
+        return OkHttpClientHandler.doGetRequest(url,null);
     }
 
 
