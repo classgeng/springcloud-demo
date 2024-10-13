@@ -18,7 +18,7 @@ public class MapUtils {
         LinkedHashMap<String, Object> map = new LinkedHashMap<>();
         map.put("WAREHOUSEID", 1234);
 
-        System.out.println(String.valueOf(map.get("WAREHOUSEID")));
+        System.out.println(map.get("WAREHOUSEID"));
     }
 
     /**
@@ -26,7 +26,7 @@ public class MapUtils {
      * @param map
      * @return
      */
-    public static Map<String,Integer> sort(Map<String,Integer> map){
+    public static Map<String,Integer> sortByValue(Map<String,Integer> map){
         Map<String,Integer> sortedMap = new HashMap<>();
         map.entrySet().stream().sorted(Map.Entry.comparingByValue()).
                 forEach(item -> sortedMap.put(item.getKey(),item.getValue()));

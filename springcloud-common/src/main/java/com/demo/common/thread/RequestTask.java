@@ -1,6 +1,7 @@
 package com.demo.common.thread;
 
-import com.demo.common.http.OkHttpClientHandler;
+import com.demo.common.util.OkHttpClientUtils;
+
 import java.util.concurrent.Callable;
 
 public class RequestTask implements Callable<Object>{
@@ -15,6 +16,6 @@ public class RequestTask implements Callable<Object>{
 
     @Override
     public Object call() {
-        return OkHttpClientHandler.doGetRequest(url, null);
+        return OkHttpClientUtils.doGetRequest(url, null);
     }
 }

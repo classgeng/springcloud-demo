@@ -10,4 +10,10 @@ public class UUIDUtils {
         return uuidStr;
     }
 
+    public static void main(String[] args) {
+        int totalPage = (1001 + 100 - 1) / 100;
+        System.out.println(totalPage);
+
+    }
+
 }

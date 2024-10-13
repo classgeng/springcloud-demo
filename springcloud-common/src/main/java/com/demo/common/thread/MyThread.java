@@ -1,9 +1,5 @@
 package com.demo.common.thread;
 
-import com.demo.common.http.OkHttpClientHandler;
-import org.springframework.util.StringUtils;
-
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;

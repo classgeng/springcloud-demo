@@ -25,6 +25,7 @@
 	<modules>
 		<module>springcloud-common</module>
 		<module>springcloud-config</module>
+		<module>springcloud-dal</module>
 		<module>springcloud-gateway</module>
 		<module>springcloud-ratelimiter</module>
 		<module>springcloud-sentinel</module>
@@ -88,6 +89,12 @@
 				<artifactId>springcloud-config</artifactId>
 				<version>${springcloud.demo.version}</version>
 			</dependency>
+			<!-- 数据访问 -->
+			<dependency>
+				<groupId>com.demo</groupId>
+				<artifactId>springcloud-dal</artifactId>
+				<version>${springcloud.demo.version}</version>
+			</dependency>
 			<!-- Sentinel限流 -->
 			<dependency>
 				<groupId>com.demo</groupId>
@@ -122,11 +129,6 @@
 				<artifactId>redisson</artifactId>
 				<version>3.16.4</version>
 			</dependency>
-			<dependency>
-				<groupId>cn.hutool</groupId>
-				<artifactId>hutool-all</artifactId>
-				<version>5.7.13</version>
-			</dependency>
 			<!--okhttp依赖-->
 			<dependency>
 				<groupId>com.squareup.okhttp3</groupId>
@@ -138,7 +140,30 @@
 				<artifactId>httpclient</artifactId>
 				<version>4.5.6</version>
 			</dependency>
-
+			<!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>easyexcel</artifactId>
+				<version>3.1.5</version>
+			</dependency>
+			<!-- postgresql驱动包 -->
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>42.3.3</version>
+			</dependency>
+			<!-- 阿里数据库连接池 -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid-spring-boot-starter</artifactId>
+				<version>1.2.23</version>
+			</dependency>
+			<!-- pagehelper 分页插件 -->
+			<dependency>
+				<groupId>com.github.pagehelper</groupId>
+				<artifactId>pagehelper-spring-boot-starter</artifactId>
+				<version>1.4.7</version>
+			</dependency>
         </dependencies>
     </dependencyManagement>
 

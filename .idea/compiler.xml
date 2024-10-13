@@ -15,6 +15,7 @@
         <module name="springcloud-provider1" />
         <module name="springcloud-common" />
         <module name="springcloud-config" />
+        <module name="springcloud-dal" />
       </profile>
     </annotationProcessing>
   </component>

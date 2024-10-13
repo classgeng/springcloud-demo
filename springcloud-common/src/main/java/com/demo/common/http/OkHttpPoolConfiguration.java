@@ -18,17 +18,18 @@ import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.concurrent.TimeUnit;
 /**
+ * http pool configuration
  * @author classgeng
  */
 @Slf4j
 @Configuration
 public class OkHttpPoolConfiguration {
 
-    @Value("${ok.http.connect-timeout:30}")
+    @Value("${ok.http.connect-timeout:20}")
     private Integer connectTimeout;
-    @Value("${ok.http.read-timeout:60}")
+    @Value("${ok.http.read-timeout:120}")
     private Integer readTimeout;
-    @Value("${ok.http.write-timeout:60}")
+    @Value("${ok.http.write-timeout:120}")
     private Integer writeTimeout;
     @Value("${ok.http.max-idle-connections:100}")
     private Integer maxIdleConnections;  //连接池中整体的空闲链接的最大数量
@@ -38,7 +39,7 @@ public class OkHttpPoolConfiguration {
     @Bean
     public OkHttpClient okHttpClient() {
         // 自定义连接池最大空闲连接数和等待时间大小，否则默认最大10个空闲连接
-        ConnectionPool connectionPool = new ConnectionPool(maxIdleConnections, maxIdleConnections, TimeUnit.MINUTES);
+        ConnectionPool connectionPool = new ConnectionPool(maxIdleConnections, keepAliveDuration, TimeUnit.MINUTES);
         return new OkHttpClient.Builder()
                 .sslSocketFactory(sslSocketFactory(), x509TrustManager())
                 .retryOnConnectionFailure(false)  // 是否开启缓存

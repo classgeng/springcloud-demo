@@ -17,6 +17,11 @@
       <option name="url" value="https://mirrors.tencent.com/repository/maven/build-task-tool" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="nexus-releases" />
+      <option name="name" value="Nexus Releases" />
+      <option name="url" value="http://nexus.guoyaoshuke.com/repository/gksk-maven-releases/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="tencent_public" />
       <option name="name" value="tencent_public" />
       <option name="url" value="https://mirrors.tencent.com/repository/maven/tencent_public" />
@@ -52,6 +57,16 @@
       <option name="url" value="https://mirrors.tencent.com/repository/maven/csig-prod-mid-dev02/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="nexus-sinopharm" />
+      <option name="name" value="Nexus Sinopharm" />
+      <option name="url" value="http://nexus.guoyaoshuke.com/repository/gksk-maven-public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nexus-snapshots" />
+      <option name="name" value="Nexus Snapshots" />
+      <option name="url" value="http://nexus.guoyaoshuke.com/repository/gksk-maven-snapshots/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="tencent_public_snapshots" />
       <option name="name" value="tencent_public_snapshots" />
       <option name="url" value="https://mirrors.tencent.com/repository/maven/tencent_public_snapshots/" />
@@ -60,6 +75,11 @@
       <option name="id" value="tsf-snapshot" />
       <option name="name" value="tsf-snapshot" />
       <option name="url" value="https://mirrors.tencent.com/repository/maven/tsf-snapshot/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="http://nexus.guoyaoshuke.com/repository/gksk-maven-public/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="csig-prod-mid-dev02-snapshot" />

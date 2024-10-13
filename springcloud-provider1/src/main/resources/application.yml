@@ -12,6 +12,7 @@ spring:
         # 注册中心地址
         server-addr: 10.31.249.218:8848
         namespace: 744f0124-c14b-4ea3-bc22-ce4845c843fd
+
 #Prometheus springboot监控配置
 management:
   endpoints:

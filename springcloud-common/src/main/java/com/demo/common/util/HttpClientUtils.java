@@ -1,4 +1,4 @@
-package com.demo.common.http;
+package com.demo.common.util;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;

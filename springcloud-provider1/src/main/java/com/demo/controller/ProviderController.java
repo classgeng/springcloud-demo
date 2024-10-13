@@ -3,16 +3,14 @@ package com.demo.controller;
 import com.demo.common.I18N.I18NUtils;
 import com.demo.common.http.OkHttpClientHandler;
 import com.demo.config.AppConfig;
+import com.demo.config.BaiWangConfiguration;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.RequestEntity;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-
-import java.beans.Transient;
+import javax.annotation.Resource;
 
 /**
- * @author xfgeng
+ * @author classgeng
  * @date 2020-11-16 15:16
  */
 @Slf4j
@@ -20,8 +18,14 @@ import java.beans.Transient;
 @RequestMapping("/api/provider")
 public class ProviderController {
 
-    @Autowired
+    @Resource
     private AppConfig appConfig;
+
+    @Resource
+    private BaiWangConfiguration baiWangConfiguration;
+
+    @Resource
+    private OkHttpClientHandler okHttpClientHandler;
 
     /**
      * 测试服务
@@ -38,7 +42,6 @@ public class ProviderController {
      * @return
      */
     @GetMapping(path="/sayNo")
-    @Transactional
     public String sayNo(String name) {
         return "no，" + name;
     }
@@ -48,9 +51,8 @@ public class ProviderController {
      * @return
      */
     @GetMapping(path="/http")
-    @Transactional
     public String http(String url) {
-        return OkHttpClientHandler.doGetRequest(url,null);
+        return okHttpClientHandler.doGetRequest(url,null);
     }
 
 
@@ -61,6 +63,17 @@ public class ProviderController {
 
         Object[] args = {str,language,contentLanguage};
         return I18NUtils.msg("tsf.gateway.create", args, language);
+    }
+
+    /**
+     * 获取配置信息
+     * @return
+     */
+    @GetMapping(path="/getBwConfig")
+    public String getBwConfig() {
+        String config = String.format("AkId:%s AkSecret:%s FpUrl:%s", baiWangConfiguration.getAkId(), baiWangConfiguration.getAkSecret(), baiWangConfiguration.getFpUrl());
+        log.info(config);
+        return config;
     }
 
 }
