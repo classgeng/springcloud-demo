@@ -3,7 +3,7 @@ package com.demo.util;
 /**
  * 字符串格式化
  * 
- * @author ruoyi
+ * @author classgeng
  */
 public class StrFormatter
 {

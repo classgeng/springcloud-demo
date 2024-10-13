@@ -6,7 +6,7 @@ import com.demo.util.ServletUtils;
 /**
  * 表格数据处理
  * 
- * @author ruoyi
+ * @author classgeng
  */
 public class TableSupport
 {
