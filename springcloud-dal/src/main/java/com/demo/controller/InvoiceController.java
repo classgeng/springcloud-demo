@@ -44,13 +44,11 @@ public class InvoiceController extends BaseController {
      * @return
      */
     @RequestMapping(path="/query")
-    public TableDataInfo query() {
+    public TableDataInfo query(String invoiceNo, String purchaserTaxNo) {
         Invoice invoice = new Invoice();
-        invoice.setPurchaserTaxNo("916501002286701741");
-        invoice.setSellerTaxNo("915101005696858096");
-
-        PageUtils.startPage();
-        return getDataTable(invoiceService.queryInvoiceList(invoice));
+        invoice.setInvoiceNo(invoiceNo);
+        invoice.setPurchaserTaxNo(purchaserTaxNo);
+        return getDataTable(invoiceService.queryInvoiceByPage(invoice));
     }
 
 

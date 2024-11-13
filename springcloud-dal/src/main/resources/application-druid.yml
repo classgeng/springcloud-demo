@@ -8,9 +8,12 @@ spring:
             # 主库数据源
             master:
                 # url: jdbc:mysql://localhost:3306/ry?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
-                url: jdbc:postgresql://10.31.249.150:5432/gksk_invoice_purchase?currentSchema=gksk_invoice_purchase
-                username: gksk_invoice_admin
-                password: IAvrypbX%mSXyEm6d!
+                # url: jdbc:postgresql://10.31.249.150:5432/gksk_invoice_purchase?currentSchema=gksk_invoice_purchase
+                # username: gksk_invoice_admin
+                # password: IAvrypbX%mSXyEm6d!
+                url: jdbc:postgresql://10.42.2.90:5421/gksk_invoice_purchase?currentSchema=gksk_invoice_purchase
+                username: gksk_invoice_user
+                password: K!1%%Xs:v8I:inf3?x
             # 从库数据源
             slave:
                 # 从数据源开关/默认关闭

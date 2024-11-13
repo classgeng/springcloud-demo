@@ -3,6 +3,7 @@ package com.demo.service.impl;
 import com.demo.domain.Invoice;
 import com.demo.mapper.InvoiceMapper;
 import com.demo.service.InvoiceService;
+import com.demo.util.PageUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -15,7 +16,8 @@ public class InvoiceServiceImpl implements InvoiceService {
     private InvoiceMapper invoiceMapper;
 
     @Override
-    public List<Invoice> queryInvoiceList(Invoice invoice) {
-        return invoiceMapper.selectInvoiceList(invoice);
+    public List<Invoice> queryInvoiceByPage(Invoice invoice) {
+        PageUtils.startPage();
+        return invoiceMapper.selectInvoiceByPage(invoice);
     }
 }

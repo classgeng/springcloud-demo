@@ -12,6 +12,6 @@ public interface InvoiceService {
      * @param invoice 发票信息
      * @return 发票信息集合
      */
-    List<Invoice> queryInvoiceList(Invoice invoice);
+    List<Invoice> queryInvoiceByPage(Invoice invoice);
 
 }

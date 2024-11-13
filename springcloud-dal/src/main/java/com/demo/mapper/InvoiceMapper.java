@@ -23,7 +23,7 @@ public interface InvoiceMapper {
      * @param invoice 发票信息
      * @return 发票信息集合
      */
-    List<Invoice> selectInvoiceList(@Param("request") Invoice invoice);
+    List<Invoice> selectInvoiceByPage(@Param("request") Invoice invoice);
 
 
 }

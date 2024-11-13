@@ -12,9 +12,10 @@ import java.util.concurrent.*;
 public class CompletableFutureTest {
 
     public static final Integer deductSize = 50;
+    private static final int MAX_RETRIES = 3;           // 最大重试次数
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        testFuture();
+        testFutureRetries();
     }
 
 
@@ -156,6 +157,26 @@ public class CompletableFutureTest {
 
         return userInfoList;
     }
+
+
+    public static void testFutureRetries() {
+        CompletableFuture.runAsync(() -> {
+            long currentTimeMillis = System.currentTimeMillis();
+            for (int attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+                try {
+                    TimeUnit.SECONDS.sleep((long) Math.pow(2, attempt)); // 指数退避
+                } catch (InterruptedException ie) {
+                    Thread.currentThread().interrupt();
+                    System.out.println("Thread was interrupted");
+                }
+                System.out.println("第" + attempt + "次重试");
+            }
+            double time = (System.currentTimeMillis() - currentTimeMillis) / 1000d;
+            System.out.println("耗时=" + time);
+        }, ThreadPoolExecutorConfig.executor());
+
+    }
+
 
 
 
