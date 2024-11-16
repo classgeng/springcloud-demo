@@ -29,6 +29,7 @@
 		<module>springcloud-gateway</module>
 		<module>springcloud-ratelimiter</module>
 		<module>springcloud-sentinel</module>
+		<module>springcloud-prometheus</module>
 
 		<module>springcloud-provider1</module>
 		<module>springcloud-provider2</module>
@@ -99,6 +100,12 @@
 			<dependency>
 				<groupId>com.demo</groupId>
 				<artifactId>springcloud-sentinel</artifactId>
+				<version>${springcloud.demo.version}</version>
+			</dependency>
+			<!-- prometheus监控 -->
+			<dependency>
+				<groupId>com.demo</groupId>
+				<artifactId>springcloud-prometheus</artifactId>
 				<version>${springcloud.demo.version}</version>
 			</dependency>
 			<dependency>

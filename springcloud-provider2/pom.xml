@@ -35,6 +35,11 @@
             <groupId>com.demo</groupId>
             <artifactId>springcloud-config</artifactId>
         </dependency>
+        <!-- 监控 -->
+        <dependency>
+            <groupId>com.demo</groupId>
+            <artifactId>springcloud-prometheus</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

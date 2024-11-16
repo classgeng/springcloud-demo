@@ -1,4 +1,4 @@
-package com.demo.bean;
+package com.demo.config;
 
 import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Value;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PrometheusBean {
+public class PrometheusConfiguration {
 
     @Bean
     MeterRegistryCustomizer<MeterRegistry> configurer(

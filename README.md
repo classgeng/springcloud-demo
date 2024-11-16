@@ -6,6 +6,7 @@
     springcloud-gateway         -> 网关
     springcloud-ratelimiter     -> 限流
     springcloud-sentinel        -> 熔断、降级
+    springcloud-prometheus      -> 监控
     
     springcloud-consumer        -> 服务消费方
     springcloud-provider1       -> 服务提供方1     

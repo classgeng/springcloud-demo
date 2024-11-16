@@ -1,15 +1,12 @@
 package com.demo.common.util;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelReader;
-import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.read.metadata.ReadSheet;
-import com.alibaba.excel.write.metadata.WriteSheet;
 import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Java解析、生成Excel比较有名的框架有Apache poi、jxl。
