@@ -1,5 +1,6 @@
 package com.demo.common.util;
 
+import com.alibaba.excel.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
@@ -71,6 +72,7 @@ public class OkHttpClientUtils {
      */
     public static String doPostRequest(String url, String params, Map<String, String> headers, MediaType mediaType) {
         log.info("request url: {}, params: {}", url, params);
+        params = StringUtils.isEmpty(params) ? "" : params;
         RequestBody requestBody = RequestBody.create(params, mediaType);
         Request.Builder builder = buildHeader(headers);
         Request request = builder.url(url).post(requestBody).build();

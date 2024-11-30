@@ -1,6 +1,6 @@
 package com.demo.service.impl;
 
-import com.demo.common.util.EasyExcelUtils;
+import com.demo.common.excel.EasyExcelUtils;
 import com.demo.common.util.UUIDUtils;
 import com.demo.dto.UserInfo;
 import com.demo.service.DemoService;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.ForkJoinPool;
 
 @Slf4j

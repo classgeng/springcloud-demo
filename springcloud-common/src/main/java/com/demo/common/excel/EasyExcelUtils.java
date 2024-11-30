@@ -1,7 +1,8 @@
-package com.demo.common.util;
+package com.demo.common.excel;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelReader;
 import com.alibaba.excel.read.metadata.ReadSheet;
+import com.demo.common.util.BeanConvert;
 import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
@@ -50,6 +51,11 @@ public class EasyExcelUtils {
 
     public static void write(List<?> list, Class<?> objectClass, String filePath, String sheetName) {
         EasyExcel.write(filePath, objectClass).sheet(sheetName).doWrite(list);
+    }
+
+    public static void exportSerialNumber(List<?> list, Class<?> objectClass, String filePath, String sheetName) {
+        EasyExcel.write(filePath, objectClass).
+				registerWriteHandler(new CustomRowWriteHandler()).sheet(sheetName).doWrite(list);
     }
 
 
