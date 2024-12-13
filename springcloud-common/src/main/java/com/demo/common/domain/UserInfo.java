@@ -7,6 +7,8 @@ import com.alibaba.excel.annotation.write.style.HeadRowHeight;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 @Data
 @AllArgsConstructor
 @HeadRowHeight(20)//表头行高
@@ -28,5 +30,11 @@ public class UserInfo {
      */
     @ExcelProperty({"用户信息", "年龄"})
     private Integer age;
+
+    /**
+     * 金额
+     */
+    @ExcelProperty({"用户信息", "金额"})
+    private BigDecimal amt;
 
 }

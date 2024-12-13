@@ -40,11 +40,11 @@ public class JdkStreamUtils {
 
     public static void main(String[] args) {
         List<UserInfo> list = new ArrayList<>();
-        list.add(new UserInfo("1","张三", 12));
-        list.add(new UserInfo("2","李四", 20));
-        list.add(new UserInfo("3","王五", 19));
-        list.add(new UserInfo("4","赵六", 17));
-        list.add(new UserInfo("5","钱八", 18));
+        list.add(new UserInfo("1","张三", 12, null));
+        list.add(new UserInfo("2","李四", 20,null));
+        list.add(new UserInfo("3","王五", 19,null));
+        list.add(new UserInfo("4","赵六", 17,null));
+        list.add(new UserInfo("5","钱八", 18,null));
 
         // 过滤姓名中有五的用户
         List<UserInfo> result = list.stream().filter(item -> item.getName().contains("五")).collect(Collectors.toList());

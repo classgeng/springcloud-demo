@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -117,6 +118,7 @@ public class PurchaseReportServiceTests {
             if(Objects.nonNull(invoiceAccount)) {
                 invoiceReport.setAutoAccountCount(invoiceAccount.getAccountCount());
             }
+            //DecimalFormat decimalFormat = new DecimalFormat("#.##%");
             invoiceReport.setInvoiceAccRate(item.getInvoiceAccRate().divide(new BigDecimal(100)));
             result.add(invoiceReport);
         });

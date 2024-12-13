@@ -128,7 +128,7 @@ public class CompletableFutureTest {
         Thread.sleep(3000);
         List<UserInfo> userInfoList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            userInfoList.add(new UserInfo(UUIDUtils.getUUID(),"demo", 18));
+            userInfoList.add(new UserInfo(UUIDUtils.getUUID(),"demo", 18,null));
         }
         log.info("queryUserInfoList size:{}", userInfoList.size());
 
