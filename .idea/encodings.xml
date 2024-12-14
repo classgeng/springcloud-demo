@@ -9,10 +9,14 @@
     <file url="file://$PROJECT_DIR$/springcloud-consumer/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-core/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-dal/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-dal/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-gateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-metrics/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-metrics/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-prometheus/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-prometheus/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-provider1/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-provider1/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-provider2/src/main/java" charset="UTF-8" />

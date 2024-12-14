@@ -1,0 +1,38 @@
+server:
+  # 服务器的HTTP端口
+  port: 8084
+spring:
+  application:
+    name: springcloud-dal
+  cloud:
+    nacos:
+      username: dev_snail
+      password: 5vYwfd6SS1zXXjS
+      discovery:
+        # 注册中心地址
+        server-addr: 10.31.249.218:8848
+        namespace: 744f0124-c14b-4ea3-bc22-ce4845c843fd
+  profiles:
+    active: druid
+
+# MyBatis
+mybatis:
+  # 搜索指定包别名
+  typeAliasesPackage: com.demo.domain
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/*Mapper.xml
+  # 加载全局的配置文件
+  configLocation: classpath:mybatis-config.xml
+
+# PageHelper分页插件
+pagehelper:
+  helperDialect: postgresql
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+# 日志配置
+logging:
+  level:
+    com.demo: debug
+    org.springframework: info

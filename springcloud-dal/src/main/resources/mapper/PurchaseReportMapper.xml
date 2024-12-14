@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.PurchaseReportMapper">
+
+    <select id="selectPurchaseReport" resultType="com.demo.domain.PurchaseReport">
+        select t.tenant_id,t.system_source,
+        sum(case when (发票平台开票数 is not null) then 1 else 0 end) as invoice_company_count,
+        count(t.cms公司数) as cms_company_count,
+        sum(t."发票平台开票数") invoice_count,
+        sum(t."cms开票数量") cms_count
+        from (
+        SELECT tenant_id,system_source,
+        count(owner_id) cms公司数,
+        SUM (invoice_count) cms开票数量,
+        SUM (total_amount) cms开票金额,
+        SUM (plat_invoice_count) 发票平台开票数,
+        SUM (plat_total_amount) 发票平台开票金额
+        FROM purchase_report
+        WHERE start_date = '2024-10-01 00:00:00' AND end_date = '2024-10-31 23:59:59'
+        GROUP BY tenant_id,system_source,owner_id) t
+        GROUP BY t.tenant_id,t.system_source
+        order by t.tenant_id
+    </select>
+
+    <select id="selectInvoiceTicketStatistics" resultType="com.demo.domain.PurchaseReport">
+        select t.tenant_id,t.system_source,count(1) invoice_company_count,sum(外部订单数量)+sum(关联交易订单数量) invoice_count,
+        round(avg(精准配单率),2) invoice_acc_rate
+        from(
+        select tenant_id,system_source,statistics_date,company_name,external_count as 外部订单数量,acc_external_count as  精准外部订单数量,
+        trade_count as 关联交易订单数量,acc_trade_count as 精准关联交易订单数量
+        , case when external_count=0 then 0 else  round( acc_external_count::numeric/external_count::numeric,4) end as 外部订单精准率,
+        case when trade_count=0 then 0 else round(acc_trade_count::numeric/trade_count::numeric,4) end as 关联交易精准订单精准率,
+        acc_ticket_rate as 精准配单率
+        from invoice_ticket_statistics
+        WHERE statistics_date >='202410' and external_count>30
+        )t
+        GROUP BY t.tenant_id,t.system_source,t.statistics_date
+        order by t.tenant_id,t.system_source;
+    </select>
+
+    <select id="selectAutoDeductCount" resultType="com.demo.domain.PurchaseReport">
+        select t.tenant_id,t.system_source,count(1) deduct_count
+        from (
+        select tenant_id, system_source, invoice_id
+        from invoice_dedution_detail
+        where deduction_by = '自动抵扣'
+        and deduction_time between '2024-08-01' and '2024-09-01'
+        GROUP BY tenant_id, system_source, invoice_id
+        )  t  where t.invoice_id in  (select id from invoice where (tick_authentication_status='1001'  or tick_authentication_status='1004' ))
+        group by t.tenant_id,t.system_source
+        order by t.tenant_id asc;
+    </select>
+
+    <select id="selectAutoAccountCount" resultType="com.demo.domain.PurchaseReport">
+        select t.tenant_id,t.system_source,count(1) account_count
+        from (
+        select tenant_id, system_source, invoice_code||invoice_no invoice_code_no
+        from invoice_accounting_tran
+        where create_time between '2024-10-01' and '2024-11-01'
+        GROUP BY tenant_id, system_source, invoice_code_no
+        )  t  where t.invoice_code_no  in (select invoice_code_no from invoice where (accounting_status='1002' or accounting_status='1003' ))
+        group by t.tenant_id,t.system_source
+        order by t.tenant_id asc;
+    </select>
+
+</mapper>

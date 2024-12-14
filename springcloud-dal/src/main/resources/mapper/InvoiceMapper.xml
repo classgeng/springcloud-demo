@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.InvoiceMapper">
+
+    <select id="selectInvoiceByPage" resultType="com.demo.domain.Invoice">
+        select * from invoice inv
+        where inv.purchaser_tax_no = #{request.purchaserTaxNo}
+        <if test="request.tickSyncStatus != null">
+            and inv.tick_sync_status = #{request.tickSyncStatus}
+        </if>
+        <if test="request.invoiceCode !='' and request.invoiceCode !=null">
+            and inv.invoice_code = #{request.invoiceCode}
+        </if>
+        <if test="request.invoiceNo !='' and request.invoiceNo !=null">
+            and inv.invoice_no like concat('%',#{request.invoiceNo},'%')
+        </if>
+        <if test="request.sellerName !='' and request.sellerName !=null">
+            and inv.seller_name like concat('%',#{request.sellerName},'%')
+        </if>
+        <if test="request.invoiceStatus !='' and request.invoiceStatus !=null">
+            and inv.invoice_status = #{request.invoiceStatus}
+        </if>
+        <if test="request.tickInvoiceStatus !='' and request.tickInvoiceStatus !=null">
+            and inv.tick_invoice_status = #{request.tickInvoiceStatus}
+        </if>
+        <if test="request.tickAuthenticationStatus !='' and request.tickAuthenticationStatus !=null">
+            and inv.tick_authentication_status = #{request.tickAuthenticationStatus}
+        </if>
+        <if test="request.sellerTaxNo !='' and request.sellerTaxNo !=null">
+            and inv.seller_tax_no = #{request.sellerTaxNo}
+        </if>
+        <if test="request.invoiceType !='' and request.invoiceType != null">
+            and inv.invoice_type = #{request.invoiceType}
+        </if>
+        <if test="request.returnStatus !='' and request.returnStatus != null">
+            and inv.return_status = #{request.returnStatus}
+        </if>
+        <if test="request.signInStatus !='' and request.signInStatus != null">
+            and inv.sign_in_status= #{request.signInStatus}
+        </if>
+        <if test="request.paymentStatus !='' and request.paymentStatus != null">
+            and inv.payment_status = #{request.paymentStatus}
+        </if>
+        <if test="request.accountingStatus !='' and request.accountingStatus != null">
+            and inv.accounting_status = #{request.accountingStatus}
+        </if>
+        order by inv.invoice_date desc,inv.id desc
+    </select>
+
+</mapper>
