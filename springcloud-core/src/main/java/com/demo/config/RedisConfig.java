@@ -23,9 +23,9 @@ public class RedisConfig {
      * @return
      */
     @Bean
-    public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
+    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         // 1.创建 redisTemplate 模版
-        RedisTemplate<Object, Object> template = new RedisTemplate<>();
+        RedisTemplate<String, Object> template = new RedisTemplate<>();
         // 2.关联 redisConnectionFactory
         template.setConnectionFactory(redisConnectionFactory);
         // 3.创建 序列化类
