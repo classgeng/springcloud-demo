@@ -1,5 +1,6 @@
 package com.demo.common;
 
+import cn.hutool.core.util.StrUtil;
 import com.demo.common.util.OkHttpClientUtils;
 
 import java.util.HashMap;
@@ -9,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String url = "http://openapisit.guoyaoshuke.com/openapi/guokongrebate/api/gksk-rebate-openapi/invoice-writeoff/account/confirm/addBillId";
+        /*String url = "http://openapisit.guoyaoshuke.com/openapi/guokongrebate/api/gksk-rebate-openapi/invoice-writeoff/account/confirm/addBillId";
         String params = null;
         Map<String, String> headers = new HashMap<String, String>();
         headers.put("Content-Type", "application/json");
@@ -26,7 +27,10 @@ public class Main {
         headers.put("gksk-user-id", "500601473253381");
         headers.put("gksk-access-token", "invoice");
 
-        OkHttpClientUtils.doPostJson(url, params, headers);
+        OkHttpClientUtils.doPostJson(url, params, headers);*/
+
+        double dd = StrUtil.similar("你好1223", "你好1223");
+        System.out.println(dd);
 
     }
 

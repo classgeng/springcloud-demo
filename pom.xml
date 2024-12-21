@@ -191,6 +191,12 @@
 				<artifactId>pagehelper-spring-boot-starter</artifactId>
 				<version>1.4.7</version>
 			</dependency>
+			<!--hutool工具包-->
+			<dependency>
+				<groupId>cn.hutool</groupId>
+				<artifactId>hutool-all</artifactId>
+				<version>5.7.15</version>
+			</dependency>
         </dependencies>
     </dependencyManagement>
 
