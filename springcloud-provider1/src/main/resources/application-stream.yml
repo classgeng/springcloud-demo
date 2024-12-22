@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 10.31.249.231:9876;10.31.249.232:9876;10.31.249.233:9876
+          access-key: gksk_admin
+          secret-key: 61Fm#4Pa7aLZdCT
+      bindings:
+        output:
+          destination: classgeng-topic
+          group: classgeng-group

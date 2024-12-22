@@ -3,7 +3,7 @@ package com.demo.service.impl;
 import com.demo.common.excel.EasyExcelUtils;
 import com.demo.common.util.UUIDUtils;
 import com.demo.dto.UserInfo;
-import com.demo.service.DemoService;
+import com.demo.service.IDemoService;
 import com.demo.task.PaginationQueryTask;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
@@ -15,7 +15,7 @@ import java.util.concurrent.ForkJoinPool;
 
 @Slf4j
 @Service
-public class DemoServiceImpl implements DemoService {
+public class IDemoServiceImpl implements IDemoService {
 
     @Override
     public void test(String str) {

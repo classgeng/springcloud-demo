@@ -31,13 +31,32 @@
             <artifactId>spring-cloud-starter-sleuth</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <!-- 公共模块 -->
+        <dependency>
+            <groupId>com.demo</groupId>
+            <artifactId>springcloud-common</artifactId>
         </dependency>
         <!-- 配置中心 -->
         <dependency>
             <groupId>com.demo</groupId>
             <artifactId>springcloud-config</artifactId>
+        </dependency>
+        <!-- 核心模块 -->
+        <dependency>
+            <groupId>com.demo</groupId>
+            <artifactId>springcloud-core</artifactId>
+        </dependency>
+        <!-- 监控 -->
+        <dependency>
+            <groupId>com.demo</groupId>
+            <artifactId>springcloud-prometheus</artifactId>
         </dependency>
     </dependencies>
 

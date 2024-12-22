@@ -1,7 +1,6 @@
 package com.demo.util;
 
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.ArrayUtils;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;

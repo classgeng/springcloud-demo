@@ -1,8 +1,8 @@
 spring:
   cloud:
     nacos:
-      username: dev_snail
-      password: 5vYwfd6SS1zXXjS
+      username: dev_invoice
+      password: v&_eiBR#c;o(01L
       config:
         # 配置中心地址
         server-addr: 10.31.249.218:8848
