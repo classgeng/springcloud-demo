@@ -1,0 +1,11 @@
+# 数据源配置
+spring:
+    datasource:
+        url: jdbc:postgresql://10.31.249.151:5431/gksk_invoice_purchase?currentSchema=gksk_invoice_purchase
+        username: gksk_invoice_admin
+        password: lw!iu@x3bVC2$K=Bqg
+        driver-class-name: org.postgresql.Driver
+        hikari:
+            maximum-pool-size: 200 #最大连接数，小于等于0会被重置为默认值10；大于零小于1会被重置为minimum-idle的值
+            connection-timeout: 30000  #连接超时时间:毫秒，小于250毫秒，否则被重置为默认值30秒
+            minimum-idle: 10  #最小空闲连接，默认值10，小于0或大于maximum-pool-size，都会重置为maximum-pool-size
