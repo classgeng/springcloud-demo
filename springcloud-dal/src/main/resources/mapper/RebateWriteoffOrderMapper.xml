@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.RebateWriteoffOrderMapper">
+
+    <resultMap id="BaseResultMap" type="com.demo.domain.RebateWriteoffOrder">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="writeOffId" column="write_off_id" jdbcType="VARCHAR"/>
+        <result property="accountAmount" column="account_amount" jdbcType="NUMERIC"/>
+        <result property="auditAmount" column="audit_amount" jdbcType="NUMERIC"/>
+        <result property="writeOffAmt" column="write_off_amt" jdbcType="NUMERIC"/>
+        <result property="unWriteOffAmt" column="un_write_off_amt" jdbcType="NUMERIC"/>
+        <result property="status" column="status" jdbcType="SMALLINT"/>
+        <result property="accountAttachment" column="account_attachment" jdbcType="VARCHAR"/>
+        <result property="supplierCode" column="supplier_code" jdbcType="VARCHAR"/>
+        <result property="supplierName" column="supplier_name" jdbcType="VARCHAR"/>
+        <result property="agreementCode" column="agreement_code" jdbcType="VARCHAR"/>
+        <result property="agreementName" column="agreement_name" jdbcType="VARCHAR"/>
+        <result property="policyCode" column="policy_code" jdbcType="VARCHAR"/>
+        <result property="policyName" column="policy_name" jdbcType="VARCHAR"/>
+        <result property="policyCreateBy" column="policy_create_by" jdbcType="VARCHAR"/>
+        <result property="responsibleBuyer" column="policy_create_by" jdbcType="VARCHAR"/>
+        <result property="agreementAccountDateBeginDate" column="agreement_account_date_begin_date" jdbcType="VARCHAR"/>
+        <result property="agreementAccountDateEndDate" column="agreement_account_date_end_date" jdbcType="VARCHAR"/>
+        <result property="rebateType" column="rebate_type" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="createBy" column="create_by" jdbcType="VARCHAR"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="updateBy" column="update_by" jdbcType="VARCHAR"/>
+        <result property="remarks" column="remarks" jdbcType="VARCHAR"/>
+        <result property="tenantId" column="tenant_id" jdbcType="VARCHAR"/>
+        <result property="systemSource" column="system_source" jdbcType="VARCHAR"/>
+        <result property="ou" column="ou" jdbcType="VARCHAR"/>
+        <result property="invoiceCode" column="invoice_code" jdbcType="VARCHAR"/>
+        <result property="invoiceNo" column="invoice_no" jdbcType="VARCHAR"/>
+        <result property="responsibleBuyer" column="responsible_buyer" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="queryRebateWriteoffOrderList" resultMap="BaseResultMap">
+        select * from rebate_writeoff_order t1 where t1.status != 0 and t1.id in
+        (select DISTINCT t2.writeoff_order_id from price_gap_writeoff_order_relation t2
+        <where>
+            t2.price_gap_order_id in
+            <foreach collection="priceGapOrderIds" item="priceGapOrderId" index="index" open="(" close=")" separator=",">
+                #{priceGapOrderId}
+            </foreach>
+        </where>
+        )
+    </select>
+
+</mapper>

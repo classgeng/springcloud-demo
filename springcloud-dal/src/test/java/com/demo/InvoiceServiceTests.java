@@ -1,6 +1,8 @@
 package com.demo;
 
 import com.demo.domain.Invoice;
+import com.demo.domain.RebateWriteoffOrder;
+import com.demo.mapper.RebateWriteoffOrderMapper;
 import com.demo.service.InvoiceService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,6 +19,9 @@ public class InvoiceServiceTests {
     @Autowired
     private InvoiceService invoiceService;
 
+    @Autowired
+    private RebateWriteoffOrderMapper rebateWriteoffOrderMapper;
+
     @Test
     public void testQueryInvoiceByPage() {
         Invoice invoice = new Invoice();
@@ -24,6 +29,13 @@ public class InvoiceServiceTests {
         invoice.setPurchaserTaxNo("911101016343030544");
         List<Invoice> list = invoiceService.queryInvoiceByPage(invoice);
         System.out.println("invoice size:" + list.size());
+    }
+
+
+    @Test
+    public void testQueryRebateWriteoffOrderList() {
+        List<RebateWriteoffOrder> list = rebateWriteoffOrderMapper.queryRebateWriteoffOrderList(List.of(1895347485514813440L));
+        System.out.println("rebateWriteoffOrder size:" + list.size());
     }
 
 

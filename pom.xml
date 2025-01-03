@@ -200,6 +200,12 @@
 				<artifactId>hutool-all</artifactId>
 				<version>5.7.15</version>
 			</dependency>
+			<!--mybatis-plus-->
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-boot-starter</artifactId>
+				<version>3.5.1</version>
+			</dependency>
         </dependencies>
     </dependencyManagement>
 
