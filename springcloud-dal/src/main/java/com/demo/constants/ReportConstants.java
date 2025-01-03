@@ -53,13 +53,15 @@ public class ReportConstants {
             entry("guokong-heilongjiang", "国控黑龙江"),
             entry("guokong-jingmen", "国控江门"),
             entry("guokong-qinghai", "国控青海"),
-            entry("guokong-shenyang", "国控沈阳")
+            entry("guokong-shenyang", "国控沈阳"),
+            entry("guoyao-xinan", "国药西南")
     );
 
     public static final Map<String, String> systemSourceMap = Map.ofEntries(
             entry("cms-fenxiao", "cms分销"),
             entry("cms-lingshou", "cms零售"),
-            entry("cms-qixie", "cms器械")
+            entry("cms-qixie", "cms器械"),
+            entry("cms-huahong-fenxiao", "cms华虹分销")
     );
 
 }

@@ -1,11 +1,8 @@
 package com.demo.common.util;
 
-import com.demo.common.domain.PersonResDto;
 import com.demo.common.domain.Response;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
-import com.google.gson.reflect.TypeToken;
-import org.apache.poi.ss.formula.functions.T;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
