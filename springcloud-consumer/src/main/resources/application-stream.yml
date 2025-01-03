@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 10.31.249.231:9876;10.31.249.232:9876;10.31.249.233:9876
+          access-key: gksk_admin
+          secret-key: 61Fm#4Pa7aLZdCT
+        bindings:
+          inputTags:
+            consumer:
+              tags: classgeng-tags
+          inputKeys:
+            consumer:
+              keys: classgeng-keys
+      bindings:
+        inputTags:
+          destination: classgeng-topic
+          group: classgeng-tags-group
+        inputKeys:
+          destination: classgeng-topic
+          group: classgeng-keys-group

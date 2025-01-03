@@ -9,86 +9,86 @@ import java.util.Date;
  * @author liyicheng
  */
 @Data
-public class Response {
+public class Response<T> {
 
     private static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     private String code;
     private String message;
-    private Object data;
+    private T data;
     private String time;
 
 
-    public static Response success() {
-        Response response01 = new Response();
-        response01.setCode(ResponseCode.SUCCESS.getCode());
-        response01.setMessage(ResponseCode.SUCCESS.getMessage());
-        response01.setTime(SIMPLE_DATE_FORMAT.format(new Date()));
-        return response01;
+    public static <T> Response<T> success() {
+        Response<T> response = new Response<>();
+        response.setCode(ResponseCode.SUCCESS.getCode());
+        response.setMessage(ResponseCode.SUCCESS.getMessage());
+        response.setTime(SIMPLE_DATE_FORMAT.format(new Date()));
+        return response;
     }
 
-    public static Response fail(){
-        Response response01 = new Response();
-        response01.setCode(ResponseCode.FAIL.getCode());
-        response01.setMessage(ResponseCode.FAIL.getMessage());
-        response01.setTime(SIMPLE_DATE_FORMAT.format(new Date()));
-        return response01;
+    public static <T> Response<T> fail(){
+        Response<T> response = new Response<>();
+        response.setCode(ResponseCode.FAIL.getCode());
+        response.setMessage(ResponseCode.FAIL.getMessage());
+        response.setTime(SIMPLE_DATE_FORMAT.format(new Date()));
+        return response;
     }
 
-    public static Response pending(){
-        Response response01 = new Response();
-        response01.setCode(ResponseCode.PENDING.getCode());
-        response01.setMessage(ResponseCode.PENDING.getMessage());
-         return response01;
+    public static <T> Response<T> pending(){
+        Response<T> response = new Response<>();
+        response.setCode(ResponseCode.PENDING.getCode());
+        response.setMessage(ResponseCode.PENDING.getMessage());
+         return response;
     }
 
 
-    public static Response fail(String e) {
-        Response response01 = new Response();
-        response01.setCode(ResponseCode.FAIL.getCode());
-        response01.setMessage(e);
-        response01.setTime(SIMPLE_DATE_FORMAT.format(new Date()));
-        return response01;
+    public static <T> Response<T> fail(String e) {
+        Response<T> response = new Response<>();
+        response.setCode(ResponseCode.FAIL.getCode());
+        response.setMessage(e);
+        response.setTime(SIMPLE_DATE_FORMAT.format(new Date()));
+        return response;
     }
 
-    public static Response fail(String code,String e) {
-        Response response01 = new Response();
-        response01.setCode(code);
-        response01.setMessage(e);
-        response01.setTime(SIMPLE_DATE_FORMAT.format(new Date()));
-        return response01;
+    public static <T> Response<T> fail(String code,String e) {
+        Response<T> response = new Response<>();
+        response.setCode(code);
+        response.setMessage(e);
+        response.setTime(SIMPLE_DATE_FORMAT.format(new Date()));
+        return response;
     }
 
-    public static Response success(String message) {
-        Response response01 = new Response();
-        response01.setCode(ResponseCode.SUCCESS.getCode());
-        response01.setMessage(message);
-        response01.setTime(SIMPLE_DATE_FORMAT.format(new Date()));
-        return response01;
+    public static <T> Response<T> success(String message) {
+        Response<T> response = new Response<>();
+        response.setCode(ResponseCode.SUCCESS.getCode());
+        response.setMessage(message);
+        response.setTime(SIMPLE_DATE_FORMAT.format(new Date()));
+        return response;
     }
 
-    public static Response fail(ResponseCode responseCode,String message) {
-        Response response01 = new Response();
-        response01.setCode(responseCode.getCode());
-        response01.setMessage(message);
-        response01.setTime(SIMPLE_DATE_FORMAT.format(new Date()));
-        return response01;
+    public static <T> Response<T> fail(ResponseCode responseCode,String message) {
+        Response<T> response = new Response<>();
+        response.setCode(responseCode.getCode());
+        response.setMessage(message);
+        response.setTime(SIMPLE_DATE_FORMAT.format(new Date()));
+        return response;
     }
-    public static Response failWithData(String message, Object data) {
-        Response response01 = new Response();
-        response01.setCode(ResponseCode.FAIL.getCode());
-        response01.setMessage(message);
-        response01.setData(data);
-        response01.setTime(SIMPLE_DATE_FORMAT.format(new Date()));
-        return response01;
+    public static <T> Response<T> failWithData(String message, T data) {
+        Response<T> response = new Response<>();
+        response.setCode(ResponseCode.FAIL.getCode());
+        response.setMessage(message);
+        response.setData(data);
+        response.setTime(SIMPLE_DATE_FORMAT.format(new Date()));
+        return response;
     }
 
-    public static Response fail(ResponseCode responseCode) {
-        Response response01 = new Response();
-        response01.setCode(responseCode.getCode());
-        response01.setMessage(responseCode.getMessage());
-        response01.setTime(SIMPLE_DATE_FORMAT.format(new Date()));
-        return response01;
+    public static <T> Response<T> fail(ResponseCode responseCode) {
+        Response<T> response = new Response<>();
+        response.setCode(responseCode.getCode());
+        response.setMessage(responseCode.getMessage());
+        response.setTime(SIMPLE_DATE_FORMAT.format(new Date()));
+        return response;
     }
 
     public boolean isSuccess() {

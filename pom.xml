@@ -8,6 +8,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>11</java.version>
 		<springcloud.demo.version>1.0.0</springcloud.demo.version>
+		<!--<springboot.version>2.6.11</springboot.version>
+		<springcloud.version>2021.0.4</springcloud.version>
+		<springcloud.alibaba.version>2021.0.4.0</springcloud.alibaba.version>-->
 		<springboot.version>2.3.2.RELEASE</springboot.version>
 		<springcloud.version>Hoxton.SR9</springcloud.version>
 		<springcloud.alibaba.version>2.2.6.RELEASE</springcloud.alibaba.version>
@@ -23,12 +26,14 @@
 	<packaging>pom</packaging>
 	
 	<modules>
+		<module>springcloud-core</module>
 		<module>springcloud-common</module>
 		<module>springcloud-config</module>
 		<module>springcloud-dal</module>
 		<module>springcloud-gateway</module>
 		<module>springcloud-ratelimiter</module>
 		<module>springcloud-sentinel</module>
+		<module>springcloud-metrics</module>
 		<module>springcloud-prometheus</module>
 
 		<module>springcloud-provider1</module>
@@ -69,14 +74,11 @@
 				<artifactId>lombok</artifactId>
 				<version>1.18.10</version>
 			</dependency>
-			<!-- 日志 -->
+			<!-- 核心模块 -->
 			<dependency>
-				<groupId>ch.qos.logback</groupId>
-				<artifactId>logback-classic</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>jcl-over-slf4j</artifactId>
+				<groupId>com.demo</groupId>
+				<artifactId>springcloud-core</artifactId>
+				<version>${springcloud.demo.version}</version>
 			</dependency>
 			<!-- 公共模块 -->
 			<dependency>
@@ -114,6 +116,11 @@
 				<version>5.3.26</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.12.0</version>
+			</dependency>
 			<!-- Spring Boot Actuator -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
@@ -130,6 +137,22 @@
 				<groupId>com.google.guava</groupId>
 				<artifactId>guava</artifactId>
 				<version>31.0.1-jre</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>2.8.9</version>
+			</dependency>
+			<!--集成redis-->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-redis</artifactId>
+				<version>2.3.0.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>3.8.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.redisson</groupId>

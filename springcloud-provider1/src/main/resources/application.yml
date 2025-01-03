@@ -6,14 +6,15 @@ spring:
     name: provider-demo
   cloud:
     nacos:
-      username: dev_snail
-      password: 5vYwfd6SS1zXXjS
+      username: dev_invoice
+      password: v&_eiBR#c;o(01L
       discovery:
         # 注册中心地址
         server-addr: 10.31.249.218:8848
         namespace: 744f0124-c14b-4ea3-bc22-ce4845c843fd
+
   profiles:
-    include: prometheus
+    include: prometheus,stream
 
 # 日志配置
 logging:

@@ -1,6 +1,6 @@
 package com.demo.util;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * sql操作工具类

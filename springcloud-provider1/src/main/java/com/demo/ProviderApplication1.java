@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
@@ -13,6 +15,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  * @author xfgeng
  */
 @EnableAsync
+@EnableBinding(Source.class)
 @EnableDiscoveryClient
 @SpringBootApplication
 public class ProviderApplication1 extends SpringBootServletInitializer {

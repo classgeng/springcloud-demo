@@ -24,6 +24,7 @@ public class ReportConstants {
             entry("guokong-qh", "国控青海"),
             entry("guokong-shandong", "国控山东"),
             entry("guokong-shanghai", "国控上海"),
+            entry("guokong-shanxi", "国控山西"),
             entry("guokong-shaanxi", "国控陕西"),
             entry("guokong-sichuan", "国控四川"),
             entry("guokong-taiwan", "国控台湾"),

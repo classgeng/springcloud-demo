@@ -4,7 +4,7 @@ import com.demo.dto.UserInfo;
 
 import java.util.List;
 
-public interface DemoService {
+public interface IDemoService {
 
     void test(String str);
 
